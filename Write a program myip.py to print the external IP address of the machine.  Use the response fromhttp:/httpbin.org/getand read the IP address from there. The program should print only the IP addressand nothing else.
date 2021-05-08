@@ -1,0 +1,8 @@
+import urllib.request as ur
+def myip(URL):
+    f= ur.urlopen(URL).read()
+    f= f.decode('utf8').strip()
+    g= f.find('origin')
+    f=f[g+10:g+25]
+    return f
+print(myip('http://httpbin.org/get'))
